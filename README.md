@@ -88,7 +88,7 @@ After you're finished please remove all the comments and instructions!
 > Describe between 1-3 key features of the application.
 
 - **Can perform calculation**
-- **Can view math related qoutes**
+- **Can view math related quotes**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
