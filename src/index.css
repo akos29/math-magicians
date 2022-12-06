@@ -10,13 +10,15 @@
 
 :root {
   --primary: #f5913e;
-  --secondary:#e0e0e0;
-  --bg-color:#858693;
-  --bg-border:#9c9c9c;
+  --secondary: #e0e0e0;
+  --bg-color: #858693;
+  --bg-border: #9c9c9c;
+  --text: black;
 }
 
 .container {
   /* background-color: var(--secondary) */
+  color: var(--primary);
 }
 
 .calc {
@@ -28,37 +30,37 @@
 .row-group {
   display: flex;
   align-items: center;
-  justify-content:center;
-  width:100%;
+  justify-content: center;
+  width: 100%;
 }
 
 .row-group .result {
   display: flex;
   align-items: flex-end;
-  justify-content:flex-end;
+  justify-content: flex-end;
   background-color: var(--bg-color);
   width: 100%;
   padding: 1rem;
   color: white;
   font-size: 1.5rem;
   font-weight: 600;
-  font-weight: 600;
 }
 
 .keys {
   display: flex;
-  width:25%;
+  width: 25%;
   align-items: center;
   justify-content: center;
   border-top: 1px solid var(--bg-border);
   border-right: 1px solid var(--bg-border);
   padding: 1rem;
-
+  color: var(--text);
 }
 
 .keys:last-child {
   background-color: var(--primary);
   border-top: 1px solid var(--secondary);
+  color: var(--text);
 }
 
 .zero {
