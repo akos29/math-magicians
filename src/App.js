@@ -1,8 +1,8 @@
 /* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React from 'react';
 import Calculator from './components/Calculator';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="container">
