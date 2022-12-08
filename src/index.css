@@ -22,7 +22,7 @@
 }
 
 .calc {
-  background-color: var(--secondary);
+  background-color: transparent;
   width: 50%;
   margin: 5% auto;
 }
@@ -36,18 +36,19 @@
 
 .row-group .result {
   display: flex;
-  align-items: flex-end;
+  text-align: end;
   justify-content: flex-end;
   background-color: var(--bg-color);
   width: 100%;
   padding: 1rem;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 600;
 }
 
 .keys {
   display: flex;
+  font-size: 1.5rem;
   width: 25%;
   align-items: center;
   justify-content: center;
