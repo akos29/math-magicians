@@ -55,12 +55,18 @@
   border-right: 1px solid var(--bg-border);
   padding: 1rem;
   color: var(--text);
+  border-radius: 5px;
 }
 
 .keys:last-child {
   background-color: var(--primary);
   border-top: 1px solid var(--secondary);
   color: var(--text);
+}
+
+.keys:hover {
+  opacity: 0.5;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .zero {

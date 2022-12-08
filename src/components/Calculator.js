@@ -1,45 +1,57 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React, { useState } from 'react';
+import Calculate from '../logic/calculate';
 
-class Calculator extends Component {
-  render() {
-    return (
-      <div className="calc">
-        <div className="row-group">
-          <p className="result">0</p>
-        </div>
-        <div className="row-group">
-          <p className="keys">AC</p>
-          <p className="keys">+/-</p>
-          <p className="keys">%</p>
-          <p className="keys">&#247;</p>
-        </div>
-        <div className="row-group">
-          <p className="keys">7</p>
-          <p className="keys">8</p>
-          <p className="keys">9</p>
-          <p className="keys">X</p>
-        </div>
-        <div className="row-group">
-          <p className="keys">4</p>
-          <p className="keys">5</p>
-          <p className="keys">6</p>
-          <p className="keys">-</p>
-        </div>
-        <div className="row-group">
-          <p className="keys">1</p>
-          <p className="keys">2</p>
-          <p className="keys">3</p>
-          <p className="keys">+</p>
-        </div>
-        <div className="row-group">
-          <p className="keys zero">0</p>
-          <p className="keys">.</p>
-          <p className="keys">=</p>
-        </div>
+const Calculator = () => {
+  const [state, setState] = useState({
+    total: 0,
+    next: null,
+    operation: null,
+  });
+
+  const handleChange = (e) => {
+    const res = Calculate(state, e.target.innerHTML);
+    setState(res);
+  };
+
+  const { total, next, operation } = state;
+
+  return (
+    <div className="calc">
+      <form className="row-group">
+        <input disabled className="result" value={next || total || operation || 0} />
+      </form>
+      <div className="row-group">
+        <button type="button" id="AC" onClick={handleChange} className="keys">AC</button>
+        <button type="button" onClick={handleChange} className="keys">+/-</button>
+        <button type="button" onClick={handleChange} className="keys">%</button>
+        <button type="button" onClick={handleChange} className="keys">&#247;</button>
       </div>
-    );
-  }
-}
+      <div className="row-group">
+        <button className="keys" type="button" onClick={handleChange}>7</button>
+        <button className="keys" type="button" onClick={handleChange}>8</button>
+        <button className="keys" type="button" onClick={handleChange}>9</button>
+        <button className="keys" type="button" onClick={handleChange}>x</button>
+      </div>
+      <div className="row-group">
+        <button type="button" onClick={handleChange} className="keys">4</button>
+        <button type="button" onClick={handleChange} className="keys">5</button>
+        <button type="button" onClick={handleChange} className="keys">6</button>
+        <button type="button" onClick={handleChange} className="keys">-</button>
+      </div>
+      <div className="row-group">
+        <button type="button" onClick={handleChange} className="keys">1</button>
+        <button type="button" onClick={handleChange} className="keys">2</button>
+        <button type="button" onClick={handleChange} className="keys">3</button>
+        <button type="button" onClick={handleChange} className="keys">+</button>
+      </div>
+      <div className="row-group">
+        <button type="button" onClick={handleChange} className="keys zero">0</button>
+        <button type="button" onClick={handleChange} className="keys">.</button>
+        <button type="button" onClick={handleChange} className="keys">=</button>
+      </div>
+    </div>
+  );
+};
 
 export default Calculator;
