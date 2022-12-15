@@ -1,4 +1,4 @@
-import operate from './operate';
+import operate from '../logic/operate';
 
 describe('Verify if operator functions works correctly', () => {
   test('add 2 + 2 to equal 4', () => {

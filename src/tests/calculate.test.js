@@ -1,7 +1,7 @@
-import calculate from './calculate';
+import calculate from '../logic/calculate';
 
 describe('Verify calculate works correctly', () => {
-  test('When AC is clicked to clear the object value to null', () => {
+  it('When AC is clicked to clear the object value to null', () => {
     const obj = {
       total: 10,
       next: 12,
